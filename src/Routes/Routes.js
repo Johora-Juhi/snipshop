@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main/Main";
 import DisplayError from "../Pages/Shared/DisplayError/DisplayError";
 import Home from "../Pages/Home/Home/Home";
+import AddProduct from "../Pages/AddProduct/AddProduct";
 
 
 const router = createBrowserRouter([
@@ -21,11 +22,11 @@ const router = createBrowserRouter([
             // },
             
             {
-                path: '/dashboard/addProducts',
-                // element: <SellerRoute><AddProduct></AddProduct></SellerRoute>
+                path: '/dashboard/addProduct',
+                element: <AddProduct></AddProduct>
             },
             {
-                path: '/dashboard/myProducts',
+                path: '/dashboard/products',
                 // element: <SellerRoute><MyProducts></MyProducts></SellerRoute>
             },
         ]
