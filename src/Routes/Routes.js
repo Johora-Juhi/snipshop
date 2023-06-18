@@ -3,6 +3,7 @@ import Main from "../layouts/Main/Main";
 import DisplayError from "../Pages/Shared/DisplayError/DisplayError";
 import Home from "../Pages/Home/Home/Home";
 import AddProduct from "../Pages/AddProduct/AddProduct";
+import Products from "../Pages/Products/Products";
 
 
 const router = createBrowserRouter([
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/products',
-                // element: <SellerRoute><MyProducts></MyProducts></SellerRoute>
+                element: <Products></Products>
             },
         ]
     }

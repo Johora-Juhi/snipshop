@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-// import { format } from 'date-fns';
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -59,7 +58,6 @@ const AddProduct = () => {
           method: "POST",
           headers: {
             "content-type": "application/json",
-            authorization: `bearer ${localStorage.getItem("accessToken")}`,
           },
           body: JSON.stringify(product),
         })
@@ -104,12 +102,12 @@ const AddProduct = () => {
               <input
                 type="text"
                 className="input input-bordered w-full"
-                {...register("productTitle", {
+                {...register("title", {
                   required: "Product title is required",
                 })}
               />
-              {errors.productTitle && (
-                <p className="text-red-500">{errors.productTitle?.message}</p>
+              {errors.title && (
+                <p className="text-red-500">{errors.title?.message}</p>
               )}
             </div>
           </div>
@@ -156,7 +154,7 @@ const AddProduct = () => {
                 })}
               />
               {errors.discountPercentage && (
-                <p className="text-red-500">{errors.location?.message}</p>
+                <p className="text-red-500">{errors.discountPercentage?.message}</p>
               )}
             </div>
             <div className="form-control w-full mb-2">
@@ -186,7 +184,7 @@ const AddProduct = () => {
                 })}
               />
               {errors.stock && (
-                <p className="text-red-500">{errors.resaleSale?.message}</p>
+                <p className="text-red-500">{errors.stock?.message}</p>
               )}
             </div>
             <div className="form-control w-full mb-2">
@@ -201,7 +199,7 @@ const AddProduct = () => {
                 })}
               />
               {errors.brand && (
-                <p className="text-red-500">{errors.resaleSale?.message}</p>
+                <p className="text-red-500">{errors.brand?.message}</p>
               )}
             </div>
           </div>
@@ -227,8 +225,8 @@ const AddProduct = () => {
                   </option>
                 ))}
               </select>
-              {errors.categoryId && (
-                <p className="text-red-500">{errors.categoryId?.message}</p>
+              {errors.category && (
+                <p className="text-red-500">{errors.category?.message}</p>
               )}
             </div>
             <div className="form-control w-full">
