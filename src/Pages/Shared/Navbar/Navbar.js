@@ -8,7 +8,7 @@ const Navbar = () => {
     <div>
       <div className="navbar bg-[#1E66FF] py-[25px] px-[135px]">
         <div className="navbar-start">
-          <Link className=""><img src={logo} alt="" /></Link>
+          <Link to='/' className=""><img src={logo} alt="" /></Link>
         </div>
         <div className="navbar-center">
           <div className="join bg-white justify-between rounded-full  w-[593px]">
