@@ -1,5 +1,7 @@
 import React from "react";
 import image from "../../../assets/image1.png";
+import chanel from '../../../assets/image (1).png';
+import gabrielle from '../../../assets/image (2).png'
 import "./FeatureProduct.css";
 import {
   IoIosArrowDropleftCircle,
@@ -35,7 +37,8 @@ const FeaturedProduct = () => {
         </div>
         <div style={{ marginLeft: 100, marginBottom: 100, width: 290 }}>
           <div style={{ textAlign: "center" }} className="featureProductCard">
-            <img className="featureProductImage" src={image} alt=""/>
+            <img className="featureProductImage " src={image} alt=""/>
+            <p className="p-2 rounded-lg bg-[#0E4B80] text-white w-[83px] text-xs font-semibold preOrder">PRE_ORDER</p>
             <div>VERCACE</div>
             <div
               style={{
@@ -47,7 +50,7 @@ const FeaturedProduct = () => {
               <p>EROS - W</p>
               <p style={{ fontSize: 13, color: "#8D8D8D" }}> - Women</p>
             </div>
-            <div>$285.00 USD</div>
+            <div className="font-semibold text-[18px] text-[#0E4B80] pt-[30px]">$285.00 USD</div>
           </div>
           <div
             style={{
@@ -68,8 +71,9 @@ const FeaturedProduct = () => {
         </div>
         <div style={{ marginLeft: 100, marginBottom: 100, width: 290 }}>
           <div style={{ textAlign: "center" }} className="featureProductCard">
-            <img className="featureProductImage" src={image} alt=""/>
-            <div>VERCACE</div>
+            <img className="featureProductImage" src={chanel} alt=""/>
+            <p className="p-2 rounded-lg bg-[#0E4B80] text-white w-[83px] text-xs font-semibold preOrder">PRE_ORDER</p>
+            <div>N.5 CHANEL</div>
             <div
               style={{
                 display: "flex",
@@ -77,10 +81,10 @@ const FeaturedProduct = () => {
                 alignItems: "center",
               }}
             >
-              <p>EROS - W</p>
-              <p style={{ fontSize: 13, color: "#8D8D8D" }}> - Women</p>
+              <p>EAU DE PARFUM - M </p>
+              <p style={{ fontSize: 13, color: "#8D8D8D" }}> - Man</p>
             </div>
-            <div>$285.00 USD</div>
+            <div className="font-semibold text-[18px] text-[#0E4B80] pt-[30px]">$285.00 USD</div>
           </div>
           <div
             style={{
@@ -101,8 +105,9 @@ const FeaturedProduct = () => {
         </div>
         <div style={{ marginLeft: 100, marginBottom: 100, width: 290 }}>
           <div style={{ textAlign: "center" }} className="featureProductCard">
-            <img className="featureProductImage" src={image} alt=""/>
-            <div>VERCACE</div>
+            <img className="featureProductImage" src={gabrielle} alt=""/>
+            <p className="p-2 rounded-lg bg-[#0E4B80] text-white w-[83px] text-xs font-semibold preOrder">PRE_ORDER</p>
+            <div>GABRIELLE</div>
             <div
               style={{
                 display: "flex",
@@ -110,10 +115,10 @@ const FeaturedProduct = () => {
                 alignItems: "center",
               }}
             >
-              <p>EROS - W</p>
-              <p style={{ fontSize: 13, color: "#8D8D8D" }}> - Women</p>
+              <p>CHANEL PARIS- M </p>
+              <p style={{ fontSize: 13, color: "#8D8D8D" }}> - Man</p>
             </div>
-            <div>$285.00 USD</div>
+            <div className="font-semibold text-[18px] text-[#0E4B80] pt-[30px]">$285.00 USD</div>
           </div>
           <div
             style={{

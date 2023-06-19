@@ -27,6 +27,7 @@
   }
   
   .featureProductCard {
+    position: relative;
     width: 310px;
     height: 370px;
     border: 1px solid red;
@@ -46,6 +47,13 @@
     z-index: 2;
   }
   
+  .preOrder{
+position:absolute;
+top:-50px;
+left: 43px;
+z-index: 20;
+  }
+
   .featureProductCard div:nth-child(2) {
     font-size: 24px;
     font-weight: 600;
@@ -64,7 +72,7 @@
   
   .featureProductCard div:nth-child(4) {
     font-size: 18px;
-    color: #0e4b80;
+    /* color: #0e4b80; */
     font-weight: 600;
   }
   
