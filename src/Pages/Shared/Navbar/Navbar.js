@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-[#1E66FF] py-[25px]">
+      <div className="navbar bg-[#1E66FF] py-[25px] ">
         <div className="navbar-start">
           <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
         </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
               1
             </span>
           </Link>
-          <div className="dropdown">
+          <div className="dropdown z-10">
             <label tabIndex={0} className="btn btn-ghost">
               <HiMenu className="text-3xl"></HiMenu>
             </label>
