@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useContext } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -51,10 +51,10 @@ const AddProduct = () => {
           brand: data.brand,
           category: data.category,
           thumbnail: imgData.data.url,
-          //   "images": ["...", "...", "..."]
+          images: []
         };
 
-        fetch("https://assignment-twelve-server-six.vercel.app/categories", {
+        fetch("https://dummyjson.com/products/add", {
           method: "POST",
           headers: {
             "content-type": "application/json",

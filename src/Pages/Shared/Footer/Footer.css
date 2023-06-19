@@ -1,0 +1,61 @@
+.footerContainer{
+    width: 100%;
+
+  }
+  .footerDiv {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 64px;
+    padding-left: 170px;
+    padding-right: 170px;
+    background-color: #023f75;
+    background: url(../../../assets/Vector\ 2.png);
+    color: white;
+  }
+  
+  .footerPart h1{
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 33px;
+    margin-bottom: 30px;
+  }
+  .footerPart p{
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  padding-bottom: 10px;
+  }
+  .img{
+    display: flex;
+    align-items: center;
+    width: 251px;
+    height: 34px;
+    border: 1.5px solid white;
+    border-radius: 16px;
+  }
+  .img img{
+    width: 22px;
+    border-radius: 50%;
+    /* margin-left: 9px; */
+    margin-right: 10px;
+  }
+  .img p{
+    font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  }
+  .footerLogo{
+    margin-top: 21px;
+  }
+  .footerLogo img{
+    margin-right: 20px;
+  }
+
+
+  

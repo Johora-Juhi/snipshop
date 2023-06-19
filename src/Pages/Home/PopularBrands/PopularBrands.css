@@ -1,0 +1,125 @@
+.section {
+    background-color: #f4fcff;
+  }
+  .popularBrand {
+    display: flex;
+    align-items: center;
+    gap: 131px;
+    width: 1164px;
+    margin: 0 auto;
+    margin-bottom: 148px;
+    padding-top: 181px;
+  }
+  
+  .populerBrandLogos {
+    width: 672px;
+    height: 672px;
+    display: flex;
+    align-items: center;
+    padding: 0 19px;
+    background-color: #f4fcff;
+    padding-top: 18px;
+    background: url(../../../assets/Backgroung.png);
+  }
+  .logosBox {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 60px;
+  }
+  .box {
+    width: 182px;
+    height: 182px;
+  
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  .image {
+    width: 125px;
+  }
+  
+  .populerBrandDetails h1 {
+    font-family: "Spectral";
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 46px;
+    max-width: 361px;
+    margin-bottom: 25px;
+  }
+  .populerBrandDetails p {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 18px;
+    max-width: 290px;
+    line-height: 28px;
+    margin-bottom: 65px;
+  }
+
+  .logo {
+    width: 30px;
+    position: absolute;
+    top: 18px;
+    left: 10px;
+  }
+  .image2 {
+    position: relative;
+  }
+  /*-------------------- 
+             Social Media
+   --------------------------------*/
+  .socialMedia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 164px;
+    width: 1232px;
+    margin: 0 auto;
+    padding-bottom: 108px;
+  }
+  .socialmediaImgContainer {
+    width: 622px;
+    height: 622px;
+    background-color: #ffb082a2;
+    position: relative;
+    border-radius: 60px;
+    background: url(../../../assets/Background-1.png);
+  }
+  .socialmediaImg {
+    position: absolute;
+    top: 100px;
+    right: 0px;
+  }
+  .socialmediaLogos {
+    z-index: 1;
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    bottom: 45px;
+    left: 120px;
+  }
+  .socialMediaDetails h1 {
+    max-width: 442px;
+    font-family: "Spectral";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 46px;
+    margin-bottom: 25px;
+  }
+  .socialMediaDetails p {
+    max-width: 290px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 65px;
+  }
+  .image2 p{
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  }

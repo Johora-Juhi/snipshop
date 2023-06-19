@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
-        errorElement: <DisplayError></DisplayError>,
+        // errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: '/',
@@ -23,11 +23,11 @@ const router = createBrowserRouter([
             // },
             
             {
-                path: '/dashboard/addProduct',
+                path: '/addProduct',
                 element: <AddProduct></AddProduct>
             },
             {
-                path: '/dashboard/products',
+                path: '/products',
                 element: <Products></Products>
             },
         ]

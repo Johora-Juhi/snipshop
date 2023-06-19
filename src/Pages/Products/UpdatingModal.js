@@ -25,6 +25,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
     category,
     thumbnail,
   } = updatingProduct;
+  console.log(updatingProduct);
 
   const { data: categories = [] } = useQuery({
     queryKey: ["categories"],
@@ -75,7 +76,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
             Swal.fire({
               position: "center center",
               icon: "success",
-              title: "Product added Successfully",
+              title: "Product updated Successfully",
               showConfirmButton: false,
               timer: 2000,
             });
@@ -87,7 +88,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
     <>
       <input type="checkbox" id="update-modal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box relative">
+        <div className="modal-box relative min-w-[900px!important]">
           <label
             htmlFor="update-modal"
             className="btn btn-sm btn-circle absolute right-2 top-2"
@@ -134,22 +135,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
             </div>
 
             <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
-              <div className="form-control w-full mb-2">
-                <label className="label">
-                  <span className="label-text">Product description</span>
-                </label>
-                <textarea
-                placeholder={description}
-                defaultValue={description}
-                  className="textarea textarea-bordered w-full h-12"
-                  {...register("description", {
-                    required: "Please Enter your product description",
-                  })}
-                ></textarea>
-                {errors.description && (
-                  <p className="text-red-500">{errors.description?.message}</p>
-                )}
-              </div>
+             
               <div className="form-control w-full mb-2">
                 <label className="label">
                   <span className="label-text">Price</span>
@@ -164,9 +150,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                   })}
                 />
               </div>
-            </div>
 
-            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
               <div className="form-control w-full mb-2">
                 <label className="label">
                   <span className="label-text">DiscountPercentage</span>
@@ -181,9 +165,13 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                   })}
                 />
                 {errors.discountPercentage && (
-                  <p className="text-red-500">{errors.location?.message}</p>
+                  <p className="text-red-500">{errors.discountPercentage?.message}</p>
                 )}
               </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+              
               <div className="form-control w-full mb-2">
                 <label className="label">
                   <span className="label-text">Rating</span>
@@ -198,9 +186,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                   })}
                 />
               </div>
-            </div>
 
-            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
               <div className="form-control w-full mb-2">
                 <label className="label">
                   <span className="label-text">Stock</span>
@@ -215,9 +201,13 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                   })}
                 />
                 {errors.stock && (
-                  <p className="text-red-500">{errors.resaleSale?.message}</p>
+                  <p className="text-red-500">{errors.stock?.message}</p>
                 )}
               </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+             
               <div className="form-control w-full mb-2">
                 <label className="label">
                   <span className="label-text">Brand</span>
@@ -232,12 +222,9 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                   })}
                 />
                 {errors.brand && (
-                  <p className="text-red-500">{errors.resaleSale?.message}</p>
+                  <p className="text-red-500">{errors.brand?.message}</p>
                 )}
               </div>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
               <div className="form-control  w-full mb-2">
                 <label className="label">
                   <span className="label-text">Category</span>
@@ -252,33 +239,52 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                     <option
                       className="text-black"
                       key={category}
-                      value={category}
+                    //   value={category}
                     >
                       {category}
                     </option>
                   ))}
                 </select>
-                {errors.categoryId && (
-                  <p className="text-red-500">{errors.categoryId?.message}</p>
+                {errors.category && (
+                  <p className="text-red-500">{errors.category?.message}</p>
                 )}
               </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+              
               <div className="form-control w-full">
                 <label className="label">
                   <span className="label-text">Thumbnail</span>
                 </label>
                 <input
                   type="file"
-                  placeholder={id}
-                  defaultValue={id}
+                  
                   className="file-input file-input-bordered w-full"
                   {...register("thumbnail", { required: true })}
                 />
+              </div>
+              <div className="form-control w-full mb-2">
+                <label className="label">
+                  <span className="label-text">Product description</span>
+                </label>
+                <textarea
+                placeholder={description}
+                defaultValue={description}
+                  className="textarea textarea-bordered w-full h-24"
+                  {...register("description", {
+                    required: "Please Enter your product description",
+                  })}
+                ></textarea>
+                {errors.description && (
+                  <p className="text-red-500">{errors.description?.message}</p>
+                )}
               </div>
             </div>
 
             <input
               className="btn btn-primary rounded-none text-white my-5"
-              value="Add Product"
+              value="Update"
               type="submit"
             />
           </form>

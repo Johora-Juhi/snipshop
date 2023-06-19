@@ -35,7 +35,8 @@ const Products = () => {
             })
     }
 
-    const url = `https://dummyjson.com/products`;
+    // const url = `https://dummyjson.com/products`;
+    const url = `https://dummyjson.com/products?limit=10&skip=0`
 
     const { data: products = [], isLoading, refetch } = useQuery({
         queryKey: ['products'],
@@ -72,7 +73,7 @@ const Products = () => {
                                     <th>{i + 1}</th>
                                     <td>{product.title}</td>
                                     <td>
-                                        {<label onClick={() => setUpdatingProduct(product)} htmlFor="update-modal" className="btn btn-primary btn-outline text-white btn-sm">Update</label>}
+                                        <label onClick={() => setUpdatingProduct(product)} htmlFor="update-modal" className="btn btn-primary btn-outline text-white btn-sm">Update</label>
                                     </td>
                                     <td>
                                         <label onClick={() => setDeletingProduct(product)} htmlFor="confirmation-modal" className="btn btn-sm btn-error text-white">Delete</label>

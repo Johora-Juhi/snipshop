@@ -1,0 +1,60 @@
+.productSeller {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin: 103px 0;
+  }
+  .productSellerImg {
+    width: 666px;
+    height: 598px;
+    background: url(../../../assets/background.png);
+    display: flex;
+    justify-content: end;
+  }
+  .productSellerImg img {
+    width: 440px;
+    height: 530px;
+    padding-top: 32px;
+  }
+  .productSellerDetails {
+    padding-left: 82px;
+  }
+  .productSellerTitle {
+    display: flex;
+    align-items: center;
+  }
+  .productSellerTitle h1 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+  
+    padding-right: 5px;
+  }
+  .productSellerDetails p {
+    font-family: "Poppins";
+  
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0;
+    color: #7e7e7e;
+  }
+  .productSellerDetails h2 {
+    font-family: "Poppins";
+    font-style: italic;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    max-width: 400px;
+    margin-top: 40px;
+    margin-bottom: 52.25px;
+  }
+  .leftArrow {
+    font-size: 37.5px;
+    margin-right: 33.33px;
+  }
+  .rightArrow {
+    font-size: 37.5px;
+    color: #8d9597;
+  }
