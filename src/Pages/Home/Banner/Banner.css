@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
   }
+  .bg{
+    background-color: #cbf4fa;
+
+  }
 .background {
     background-color: #cbf4fa;
     height: 700px;
