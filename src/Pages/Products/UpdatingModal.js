@@ -38,7 +38,6 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
   const handleUpdateProduct = (data) => {
   
         const product = {
-          id: data.id,
           title: data.title,
           description: data.description,
           price: data.price,
@@ -88,21 +87,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
           <h3 className="text-lg font-bold">{title}</h3>
           <form onSubmit={handleSubmit(handleUpdateProduct)}>
             <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 mt-10">
-              <div className="form-control w-full mb-2">
-                <label className="label">
-                  <span className="label-text">Product ID</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder={id}
-                  defaultValue={id}
-                  className="input input-bordered w-full"
-                  {...register("id")}
-                />
-                {errors.id && (
-                  <p className="text-red-500">{errors.id?.message}</p>
-                )}
-              </div>
+              
               <div className="form-control w-full mb-2">
                 <label className="label">
                   <span className="label-text">Product Title</span>
@@ -116,6 +101,22 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                 />
                 {errors.title && (
                   <p className="text-red-500">{errors.title?.message}</p>
+                )}
+              </div>
+
+              <div className="form-control w-full mb-2">
+                <label className="label">
+                  <span className="label-text">Brand</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder={brand}
+                  defaultValue={brand}
+                  className="input input-bordered w-full"
+                  {...register("brand")}
+                />
+                {errors.brand && (
+                  <p className="text-red-500">{errors.brand?.message}</p>
                 )}
               </div>
             </div>
@@ -180,25 +181,6 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                 />
                 {errors.stock && (
                   <p className="text-red-500">{errors.stock?.message}</p>
-                )}
-              </div>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
-             
-              <div className="form-control w-full mb-2">
-                <label className="label">
-                  <span className="label-text">Brand</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder={brand}
-                  defaultValue={brand}
-                  className="input input-bordered w-full"
-                  {...register("brand")}
-                />
-                {errors.brand && (
-                  <p className="text-red-500">{errors.brand?.message}</p>
                 )}
               </div>
             </div>

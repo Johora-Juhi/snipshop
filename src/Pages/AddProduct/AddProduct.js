@@ -41,7 +41,6 @@ const AddProduct = () => {
           console.log(imgData.data.url);
         }
         const product = {
-          id: data.id,
           title: data.title,
           description: data.description,
           price: data.price,
@@ -80,21 +79,7 @@ const AddProduct = () => {
         <div className="text-3xl text-center">Add A Product</div>
         <form onSubmit={handleSubmit(handleAddProduct)}>
           <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 mt-10">
-            <div className="form-control w-full mb-2">
-              <label className="label">
-                <span className="label-text">Product ID</span>
-              </label>
-              <input
-                type="text"
-                className="input input-bordered w-full"
-                {...register("id", {
-                  required: "Product id is required",
-                })}
-              />
-              {errors.id && (
-                <p className="text-red-500">{errors.id?.message}</p>
-              )}
-            </div>
+            
             <div className="form-control w-full mb-2">
               <label className="label">
                 <span className="label-text">Product Title</span>
@@ -110,83 +95,7 @@ const AddProduct = () => {
                 <p className="text-red-500">{errors.title?.message}</p>
               )}
             </div>
-          </div>
 
-          <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
-            <div className="form-control w-full mb-2">
-              <label className="label">
-                <span className="label-text">Product description</span>
-              </label>
-              <textarea
-                className="textarea textarea-bordered w-full h-12"
-                {...register("description", {
-                  required: "Please Enter your product description",
-                })}
-              ></textarea>
-              {errors.description && (
-                <p className="text-red-500">{errors.description?.message}</p>
-              )}
-            </div>
-            <div className="form-control w-full mb-2">
-              <label className="label">
-                <span className="label-text">Price</span>
-              </label>
-              <input
-                type="text"
-                className="input input-bordered w-full"
-                {...register("price", {
-                  required: true,
-                })}
-              />
-            </div>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
-            <div className="form-control w-full mb-2">
-              <label className="label">
-                <span className="label-text">DiscountPercentage</span>
-              </label>
-              <input
-                type="text"
-                className="input input-bordered w-full"
-                {...register("discountPercentage", {
-                  required: "Product discountPercentage is required",
-                })}
-              />
-              {errors.discountPercentage && (
-                <p className="text-red-500">{errors.discountPercentage?.message}</p>
-              )}
-            </div>
-            <div className="form-control w-full mb-2">
-              <label className="label">
-                <span className="label-text">Rating</span>
-              </label>
-              <input
-                type="text"
-                className="input input-bordered w-full"
-                {...register("rating", {
-                  required: true,
-                })}
-              />
-            </div>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
-            <div className="form-control w-full mb-2">
-              <label className="label">
-                <span className="label-text">Stock</span>
-              </label>
-              <input
-                type="text"
-                className="input input-bordered w-full"
-                {...register("stock", {
-                  required: "Product stock is required",
-                })}
-              />
-              {errors.stock && (
-                <p className="text-red-500">{errors.stock?.message}</p>
-              )}
-            </div>
             <div className="form-control w-full mb-2">
               <label className="label">
                 <span className="label-text">Brand</span>
@@ -202,6 +111,72 @@ const AddProduct = () => {
                 <p className="text-red-500">{errors.brand?.message}</p>
               )}
             </div>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+
+          <div className="form-control w-full mb-2">
+              <label className="label">
+                <span className="label-text">Price</span>
+              </label>
+              <input
+                type="text"
+                className="input input-bordered w-full"
+                {...register("price", {
+                  required: true,
+                })}
+              />
+            </div>
+
+            <div className="form-control w-full mb-2">
+              <label className="label">
+                <span className="label-text">DiscountPercentage</span>
+              </label>
+              <input
+                type="text"
+                className="input input-bordered w-full"
+                {...register("discountPercentage", {
+                  required: "Product discountPercentage is required",
+                })}
+              />
+              {errors.discountPercentage && (
+                <p className="text-red-500">{errors.discountPercentage?.message}</p>
+              )}
+            </div>
+            
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+
+          <div className="form-control w-full mb-2">
+              <label className="label">
+                <span className="label-text">Rating</span>
+              </label>
+              <input
+                type="text"
+                className="input input-bordered w-full"
+                {...register("rating", {
+                  required: true,
+                })}
+              />
+            </div>
+
+            <div className="form-control w-full mb-2">
+              <label className="label">
+                <span className="label-text">Stock</span>
+              </label>
+              <input
+                type="text"
+                className="input input-bordered w-full"
+                {...register("stock", {
+                  required: "Product stock is required",
+                })}
+              />
+              {errors.stock && (
+                <p className="text-red-500">{errors.stock?.message}</p>
+              )}
+            </div>
+            
           </div>
 
           <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
@@ -239,6 +214,25 @@ const AddProduct = () => {
                 {...register("thumbnail", { required: true })}
               />
             </div>
+          </div>
+
+
+          <div className="">
+            <div className="form-control w-full mb-2">
+              <label className="label">
+                <span className="label-text">Product description</span>
+              </label>
+              <textarea
+                className="textarea textarea-bordered w-full h-24"
+                {...register("description", {
+                  required: "Please Enter your product description",
+                })}
+              ></textarea>
+              {errors.description && (
+                <p className="text-red-500">{errors.description?.message}</p>
+              )}
+            </div>
+            
           </div>
 
           <input
