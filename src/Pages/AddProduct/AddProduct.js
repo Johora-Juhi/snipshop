@@ -15,7 +15,7 @@ const AddProduct = () => {
   } = useForm();
   const navigate = useNavigate();
 
-  const imageHostKey = process.env.REACT_APP_imgbb_Key;
+  const imageHostKey = '2690c4df2fe0e37dce06a278e1947412';
 
   const { data: categories = [] } = useQuery({
     queryKey: ["categories"],

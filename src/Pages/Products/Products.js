@@ -23,7 +23,7 @@ const Products = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.deletedCount > 0) {
+                if (data.isDeleted) {
                     refetch();
                     Swal.fire({
                         position: 'center-center',
