@@ -5,6 +5,7 @@ import ProductSeller from '../ProductSeller/ProductSeller';
 import useTitle from '../../../hooks/useTitle';
 import Banner from '../Banner/Banner';
 import FeaturedProduct from '../FeaturedProduct/FeaturedProduct';
+import TrendingProducts from '../TrendingProducts/TrendingProducts';
 
 const Home = () => {
     useTitle('Home');
@@ -12,6 +13,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
+            <TrendingProducts></TrendingProducts>
             <ShopbyCategory></ShopbyCategory>
             <FeaturedProduct></FeaturedProduct>
             <PopularBrands></PopularBrands>

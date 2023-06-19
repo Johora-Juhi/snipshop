@@ -1,0 +1,52 @@
+.trendingProduct h1 {
+    text-align: center;
+    margin: 0 auto;
+    width: 487px;
+    height: 46px;
+    font-family: "Spectral";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 46px;
+    margin-bottom: 24px;
+  }
+  .trendingProduct p {
+    text-align: center;
+    margin: 0 auto;
+    width: 330px;
+    height: 60px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 46px;
+  }
+  .pages {
+    width: 410px;
+    display: flex;
+    margin: 0 auto;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .shopCard{
+    width: 250px;
+    height: 160px;
+    padding: 10px 0 10px 15px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .shopCardImage{
+    width: 120px;
+    height: 225px;
+  } 
+  .perfumeImage{
+    width: 60px;
+    height: 210px;
+  }

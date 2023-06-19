@@ -45,11 +45,11 @@ const Navbar = () => {
             <HiOutlineUser className=""></HiOutlineUser>
             <p className="text-[10px]">Account</p>
           </Link>
-          <Link className="flex justify-start gap-2 items-center">
+          <Link className="flex justify-start gap-2 items-center ml-[15px]">
             <TbHeart className=""></TbHeart>
             <p className="text-[10px]">My Items</p>
           </Link>
-          <Link className="flex justify-start">
+          <Link className="flex justify-start ml-[15px]">
             <HiOutlineShoppingBag className=""></HiOutlineShoppingBag>{" "}
             <span className="h-2 w-2 bg-warning rounded-full flex justify-center items-center indicator-item -ml-[6px] -mt-[6px] text-black text-[4px] font-bold">
               1
