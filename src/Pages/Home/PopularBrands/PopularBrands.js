@@ -21,22 +21,22 @@ const PopularBrands = () => {
       <div className="popularBrand">
         <div className="populerBrandLogos">
           <div className="logosBox">
-            <div className="box">
+            <div className="boxx">
               <img className="image" src={appleLogo} alt="" />
             </div>
-            <div className="box">
+            <div className="boxx">
               <img className="image" src={bmwLogo} alt="" />
             </div>
-            <div className="box">
+            <div className="boxx">
               <img className="image" src={nikeLogo} alt="" />
             </div>
-            <div className="box">
+            <div className="boxx">
               <img className="image" src={FilaLogo} alt="" />
             </div>
-            <div className="box">
+            <div className="boxx">
               <img className="image" src={miLogo} alt="" />
             </div>
-            <div className="box">
+            <div className="boxx">
               <img className="image" src={adidasLogo} alt="" />
             </div>
           </div>

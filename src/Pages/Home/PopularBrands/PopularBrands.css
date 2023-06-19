@@ -27,10 +27,9 @@
     flex-wrap: wrap;
     row-gap: 60px;
   }
-  .box {
+  .boxx {
     width: 182px;
     height: 182px;
-  
     border-radius: 25px;
     display: flex;
     justify-content: center;

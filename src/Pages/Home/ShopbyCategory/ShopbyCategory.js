@@ -20,7 +20,7 @@ const ShopbyCategory = () => {
   });
   console.log(products);
   return (
-    <div className="w-[1256px] mx-auto">
+    <div className="w-[1256px] mx-auto pb-[190px]">
       <p className="font-bold text-4xl pb-6">Shop by Category</p>
       <div className="flex justify-between items-center mb-[66px]">
         <p className="text-[18px]">
