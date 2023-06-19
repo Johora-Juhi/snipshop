@@ -22,12 +22,11 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
     rating,
     stock,
     brand,
-    category,
-    thumbnail,
+    thumbnail,images
   } = updatingProduct;
   console.log(updatingProduct);
 
-  const { data: categories = [] } = useQuery({
+  const { data: categories = [],refetch } = useQuery({
     queryKey: ["categories"],
     queryFn: async () => {
       const res = await fetch("https://dummyjson.com/products/categories");
@@ -37,19 +36,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
   });
 
   const handleUpdateProduct = (data) => {
-    const image = data.thumbnail[0];
-    const formData = new FormData();
-    formData.append("image", image);
-    const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`;
-    fetch(url, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then((imgData) => {
-        if (imgData.success) {
-          console.log(imgData.data.url);
-        }
+  
         const product = {
           id: data.id,
           title: data.title,
@@ -60,8 +47,8 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
           stock: data.stock,
           brand: data.brand,
           category: data.category,
-          thumbnail: imgData.data.url,
-          //   "images": ["...", "...", "..."]
+          thumbnail,
+          images
         };
 
         fetch(`https://dummyjson.com/products/${id}`, {
@@ -80,9 +67,11 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
               showConfirmButton: false,
               timer: 2000,
             });
+            refetch();
+            setUpdatingProduct(null)
             navigate("/products");
           });
-      });
+  
   };
   return (
     <>
@@ -92,6 +81,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
           <label
             htmlFor="update-modal"
             className="btn btn-sm btn-circle absolute right-2 top-2"
+            onClick={()=>setUpdatingProduct(null)}
           >
             ✕
           </label>
@@ -107,9 +97,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                   placeholder={id}
                   defaultValue={id}
                   className="input input-bordered w-full"
-                  {...register("id", {
-                    required: "Product id is required",
-                  })}
+                  {...register("id")}
                 />
                 {errors.id && (
                   <p className="text-red-500">{errors.id?.message}</p>
@@ -124,9 +112,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                   placeholder={title}
                   defaultValue={title}
                   className="input input-bordered w-full"
-                  {...register("title", {
-                    required: "Product title is required",
-                  })}
+                  {...register("title")}
                 />
                 {errors.title && (
                   <p className="text-red-500">{errors.title?.message}</p>
@@ -145,9 +131,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                   placeholder={price}
                   defaultValue={price}
                   className="input input-bordered w-full"
-                  {...register("price", {
-                    required: true,
-                  })}
+                  {...register("price")}
                 />
               </div>
 
@@ -160,9 +144,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                   placeholder={discountPercentage}
                   defaultValue={discountPercentage}
                   className="input input-bordered w-full"
-                  {...register("discountPercentage", {
-                    required: "Product discountPercentage is required",
-                  })}
+                  {...register("discountPercentage")}
                 />
                 {errors.discountPercentage && (
                   <p className="text-red-500">{errors.discountPercentage?.message}</p>
@@ -181,9 +163,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                   placeholder={rating}
                   defaultValue={rating}
                   className="input input-bordered w-full"
-                  {...register("rating", {
-                    required: true,
-                  })}
+                  {...register("rating")}
                 />
               </div>
 
@@ -196,9 +176,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                   placeholder={stock}
                   defaultValue={stock}
                   className="input input-bordered w-full"
-                  {...register("stock", {
-                    required: "Product stock is required",
-                  })}
+                  {...register("stock", )}
                 />
                 {errors.stock && (
                   <p className="text-red-500">{errors.stock?.message}</p>
@@ -217,53 +195,16 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                   placeholder={brand}
                   defaultValue={brand}
                   className="input input-bordered w-full"
-                  {...register("brand", {
-                    required: "Product brand is required",
-                  })}
+                  {...register("brand")}
                 />
                 {errors.brand && (
                   <p className="text-red-500">{errors.brand?.message}</p>
                 )}
               </div>
-              <div className="form-control  w-full mb-2">
-                <label className="label">
-                  <span className="label-text">Category</span>
-                </label>
-                <select
-                  {...register("category", {
-                    required: "category is required",
-                  })}
-                  className="select select-bordered w-full text-black"
-                >
-                  {categories.map((category) => (
-                    <option
-                      className="text-black"
-                      key={category}
-                    //   value={category}
-                    >
-                      {category}
-                    </option>
-                  ))}
-                </select>
-                {errors.category && (
-                  <p className="text-red-500">{errors.category?.message}</p>
-                )}
-              </div>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
-              
-              <div className="form-control w-full">
-                <label className="label">
-                  <span className="label-text">Thumbnail</span>
-                </label>
-                <input
-                  type="file"
-                  
-                  className="file-input file-input-bordered w-full"
-                  {...register("thumbnail", { required: true })}
-                />
-              </div>
+            
               <div className="form-control w-full mb-2">
                 <label className="label">
                   <span className="label-text">Product description</span>
@@ -272,9 +213,7 @@ const UpdatingModal = ({ updatingProduct, setUpdatingProduct }) => {
                 placeholder={description}
                 defaultValue={description}
                   className="textarea textarea-bordered w-full h-24"
-                  {...register("description", {
-                    required: "Please Enter your product description",
-                  })}
+                  {...register("description")}
                 ></textarea>
                 {errors.description && (
                   <p className="text-red-500">{errors.description?.message}</p>

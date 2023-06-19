@@ -4,9 +4,10 @@ import Loading from '../Shared/Loading/Loading';
 import Swal from 'sweetalert2';
 import { useQuery } from '@tanstack/react-query';
 import UpdatingModal from './UpdatingModal';
+import useTitle from '../../hooks/useTitle';
 
 const Products = () => {
-    // useTitle('Products');
+    useTitle('Products');
 
     const [deletingProduct, setDeletingProduct] = useState(null);
     const [updatingProduct, setUpdatingProduct] = useState(null);
@@ -15,13 +16,13 @@ const Products = () => {
         setDeletingProduct(null);
     }
     const handleDetetingProduct = product => {
+        console.log(product);
         fetch(`https://dummyjson.com/products/${product.id}`, {
             method: 'DELETE',
-            headers: {
-            }
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data);
                 if (data.deletedCount > 0) {
                     refetch();
                     Swal.fire({
@@ -35,8 +36,7 @@ const Products = () => {
             })
     }
 
-    // const url = `https://dummyjson.com/products`;
-    const url = `https://dummyjson.com/products?limit=10&skip=0`
+    const url = `https://dummyjson.com/products`;
 
     const { data: products = [], isLoading, refetch } = useQuery({
         queryKey: ['products'],
@@ -69,7 +69,7 @@ const Products = () => {
                     <tbody>
                         {
                             products.map((product, i) =>
-                                <tr key={product._id} className="hover">
+                                <tr key={product.id} className="hover">
                                     <th>{i + 1}</th>
                                     <td>{product.title}</td>
                                     <td>
